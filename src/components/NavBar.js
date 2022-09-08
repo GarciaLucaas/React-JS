@@ -1,3 +1,6 @@
+import React from"react";
+import CartWidget from './CartWidget';
+
 function NavBar() {
     return (
       <div>
@@ -21,10 +24,12 @@ function NavBar() {
                 </li>
               </ul>
             </div>
+            
           </div>
+          <CartWidget />
         </nav>  
       </div>
     );
-  }
+}
   
-  export default NavBar;
+export default NavBar;
