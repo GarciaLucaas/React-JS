@@ -6,7 +6,7 @@ function NavBar() {
       <div>
         <nav className="navbar navbar-expand-lg bg-nav">
           <div className="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a className="navbar-brand" href="#">
             CDHamburguesa</a>
             <div className="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
               <ul className="navbar-nav">
