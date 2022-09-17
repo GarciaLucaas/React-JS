@@ -1,15 +1,10 @@
-let is_ok = true
-
-let customFetch = (time,array) => {
-    return new Promise((resolve, reject) =>{
+export const customFetch = (items) =>{
+    return new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            if(is_ok){
-                resolve(array)
-            }else{
-                reject("error reading data")
-            }
-        },time)
-    })
-}
-
+            resolve(items)
+            reject("Error")
+        },2000)
+    }
+)}
 export default customFetch;
+
