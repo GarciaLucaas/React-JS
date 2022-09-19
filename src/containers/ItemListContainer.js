@@ -7,19 +7,18 @@ import productos from'../utils/productos'
 
 
 const ItemListContainer =()=>{
-    const [listaproduc, setlistaproduc] = useState([])
+    const [listaProduc, setListaProduc] = useState([])
     useEffect(()=>{
         customFetch(productos)
-        .then(data=>setlistaproduc(data))
+        .then(data=>setListaProduc(data))
         .catch(err => console.log(err))
     },[])
     
         return(
             <div>
-                <ItemList listaproduc ={listaproduc}/>
+                <ItemList listaproduc ={listaProduc}/>
                 <ItemCount initial={1} stock={5}/>
             </div>
         )
-    
 }
 export default ItemListContainer;
