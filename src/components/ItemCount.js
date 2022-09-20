@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Item from "./Item";
+//import Item from "./Item";
 
 const ItemCount =({initial, stock}) =>{
     const [contador, setContador]= useState(initial);
