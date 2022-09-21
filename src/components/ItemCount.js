@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //import Item from "./Item";
 
-const ItemCount =({initial, stock}) =>{
+const ItemCount =({initial, stock, onAdd}) =>{
     const [contador, setContador]= useState(initial);
     const sumar = () =>{
         if(contador < stock){
@@ -14,7 +14,8 @@ const ItemCount =({initial, stock}) =>{
     };
     const agregarCarrito = () =>{
         setContador(contador);
-        console.log("Se agrego" +" "+ contador + " "+ "al carrito");
+        alert("Se agrego" +" "+ contador + " "+ "al carrito");
+        onAdd(contador)
     };
     return(
         <div>

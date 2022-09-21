@@ -1,10 +1,17 @@
 import React from "react";
 import ItemCount from "../components/ItemCount"
+import {Link} from 'react-router-dom'
+import { useState } from "react";
+
 
 
 
 const ItemDetail =({item}) => {
-
+    const[itemCount, setItemCount] = useState(0);
+    const onAdd =(qty)=>{
+        alert("Usted a comprado "+ qty + "producto")
+        setItemCount(qty)
+    }
     return(
         <>
         <div className="card mb-3">
@@ -12,9 +19,15 @@ const ItemDetail =({item}) => {
             <div className="card-body">
                 <h5 className="card-title">{item.title}</h5>
                 <p className="card-text">{item.precio}</p>
+                <p className="card-text">Disponible :{item.stock}</p>
                 <p className="card-text"><small className="text-muted">{item.description}</small></p>
             </div>
-            <ItemCount initial = {1} stock={5}/>
+            {
+                itemCount === 0  ?
+                <ItemCount initial = {1} stock={item.stock} onAdd={onAdd}/>
+                : <Link to='/cart'><button type="button" className="btn btn-danger">Ir Carrito</button></Link> 
+            }
+            
         </div>
         
         </>

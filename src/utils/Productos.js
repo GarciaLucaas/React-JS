@@ -5,7 +5,8 @@ const productos = [
         precio: 500,
         description:"Hamburguesa Simple",
         img: "../images/hamburguesa.jpg",
-        categoryId: 1
+        categoryId: 1,
+        stock: 10
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ const productos = [
         precio: 700,
         description:"Hamburguesa Doble",
         img: "../images/hamburguesa.jpg",
-        categoryId: 1
+        categoryId: 1,
+        stock: 10
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ const productos = [
         precio: 100,
         description:"Hamburguesa Triple",
         img: "../images/hamburguesa.jpg",
-        categoryId: 1
+        categoryId: 1,
+        stock: 10
     },
     {
         id: 4,
@@ -29,7 +32,8 @@ const productos = [
         precio: 150,
         description:"Coca-Cola",
         img: "./images/bebida.jpg",
-        categoryId:2
+        categoryId: 2,
+        stock: 5
     },
     {
         id: 5,
@@ -37,7 +41,8 @@ const productos = [
         precio: 150,
         description:"Sprite",
         img: "./images/bebida.jpg",
-        categoryId:2
+        categoryId: 2,
+        stock: 2
     },
     {
         id: 6,
@@ -45,7 +50,8 @@ const productos = [
         precio: 200,
         description:"papas",
         img: "./images/papas.jpg",
-        categoryId: 3
+        categoryId: 3,
+        stock: 5
     }
 ];
 export default productos;
