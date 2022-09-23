@@ -4,7 +4,7 @@ const productos = [
         title: "CdSimple",
         precio: 500,
         description:"Hamburguesa Simple",
-        img: "../images/hamburguesa.jpg",
+        img: "https://i.ibb.co/QCMFjjp/hamburguesa.jpg",
         categoryId: 1,
         stock: 10
     },
@@ -13,7 +13,7 @@ const productos = [
         title: "CdDoble",
         precio: 700,
         description:"Hamburguesa Doble",
-        img: "../images/hamburguesa.jpg",
+        img: "https://i.ibb.co/QCMFjjp/hamburguesa.jpg",
         categoryId: 1,
         stock: 10
     },
@@ -22,7 +22,7 @@ const productos = [
         title: "CdTriple",
         precio: 100,
         description:"Hamburguesa Triple",
-        img: "../images/hamburguesa.jpg",
+        img: "https://i.ibb.co/QCMFjjp/hamburguesa.jpg",
         categoryId: 1,
         stock: 10
     },
@@ -31,7 +31,7 @@ const productos = [
         title: "CdBebida-CocaCola",
         precio: 150,
         description:"Coca-Cola",
-        img: "./images/bebida.jpg",
+        img: "https://i.ibb.co/2sFHxsX/bebida.jpg",
         categoryId: 2,
         stock: 5
     },
@@ -40,7 +40,7 @@ const productos = [
         title: "Cdbebida-Sprite",
         precio: 150,
         description:"Sprite",
-        img: "./images/bebida.jpg",
+        img: "https://i.ibb.co/2sFHxsX/bebida.jpg",
         categoryId: 2,
         stock: 2
     },
@@ -49,7 +49,7 @@ const productos = [
         title: "CdPapas",
         precio: 200,
         description:"papas",
-        img: "./images/papas.jpg",
+        img: "https://i.ibb.co/Pc11L4b/papas.jpg",
         categoryId: 3,
         stock: 5
     }

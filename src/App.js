@@ -5,8 +5,10 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from'./containers/ItemDetailContainer'
 import Cart from './components/Cart';
+import CartContextProvider from './components/CartContext';
 function App() {
   return (
+    <CartContextProvider>
       <BrowserRouter>
       <NavBar />
       <Routes>
@@ -16,6 +18,7 @@ function App() {
         <Route path = "/Cart" element = {<Cart/>}/>
       </Routes>
       </BrowserRouter>
+      </CartContextProvider>
   );
 }
 
