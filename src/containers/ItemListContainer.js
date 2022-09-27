@@ -1,25 +1,30 @@
 import { useEffect, useState } from 'react';
-import {customFetch} from '../utils/customFetch';
 import ItemList from "../components/ItemList";
-import productos from'../utils/productos'
 import {useParams} from'react-router-dom';
-
-
+import {db} from '../utils/firebaseConfig'
+import {collection, getDocs, where,query } from "firebase/firestore";
 
 const ItemListContainer =()=>{
     const [listaProduc, setListaProduc] = useState([])
     const {id} = useParams();
-    useEffect(()=>{
+    useEffect(async()=>{
         if(id){
-            customFetch(productos.filter(item => item.categoryId == id))
-            .then(data=>setListaProduc(data))
-            .catch(err => console.log(err))
-        }else{
-            customFetch(productos)
-            .then(data=>setListaProduc(data))
-            .catch(err => console.log(err))
+            const q = query((collection(db, "productos"),where('categoryId', '==',parseInt(id))))
+            const querySnapshot = await getDocs(q)
+            const dataFromFiresotre = querySnapshot.docs.map(item => ({id: item.id, ...item.data()}))
+            setListaProduc(dataFromFiresotre)
         }
-    },[id])
+        else{
+            const querySnapshot = await getDocs(collection(db, "productos"));
+            const dataFromFiresotre = querySnapshot.docs.map(item => ({id: item.id, ...item.data()}))
+            setListaProduc(dataFromFiresotre)
+        }
+    },[id]);
+    useEffect(()=>{
+        return(()=>{
+            setListaProduc([])
+        })
+    },[]);
     
         return(
             <div>
