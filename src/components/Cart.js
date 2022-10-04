@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 const Cart = ()=>{
    const ctx = useContext(CartContext)
+   
    if(ctx.cartList.length === 0){
     return(
         <>
@@ -27,7 +28,7 @@ const Cart = ()=>{
                             </div>
                             <div className="col">                           
                                 <button className="btn-danger" onClick={()=>ctx.removeItem(item.id)}>Eliminar este producto</button>
-                                <button className="btn-danger" onClick={()=>ctx.clear()}>Comprar</button>
+                                <button className="btn-danger" onClick={()=>ctx.crearOrden()}>Comprar</button>
                             </div>
                         </div>
                     </div>)

@@ -7,24 +7,20 @@ import {collection, getDocs, where,query } from "firebase/firestore";
 const ItemListContainer =()=>{
     const [listaProduc, setListaProduc] = useState([])
     const {id} = useParams();
-    useEffect(async()=>{
+    const productosBd = collection(db, "productos")
+    useEffect(()=>{
         if(id){
-            const q = query((collection(db, "productos"),where('categoryId', '==',parseInt(id))))
-            const querySnapshot = await getDocs(q)
-            const dataFromFiresotre = querySnapshot.docs.map(item => ({id: item.id, ...item.data()}))
-            setListaProduc(dataFromFiresotre)
-        }
-        else{
-            const querySnapshot = await getDocs(collection(db, "productos"));
-            const dataFromFiresotre = querySnapshot.docs.map(item => ({id: item.id, ...item.data()}))
-            setListaProduc(dataFromFiresotre)
+            const q = query(productosBd, where('categoryId', '==',parseInt(id)))
+            getDocs(q)
+            .then(result =>
+                setListaProduc(result.docs.map(item => ({id: item.id, ...item.data()}))))
+        } else{
+           getDocs(productosBd)
+            .then(result => 
+                setListaProduc(result.docs.map(item => ({id: item.id, ...item.data()}))))
         }
     },[id]);
-    useEffect(()=>{
-        return(()=>{
-            setListaProduc([])
-        })
-    },[]);
+
     
         return(
             <div>
