@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import Item from "./Item";
+
 
 const ItemCount =({initial, stock, onAdd}) =>{
     const [contador, setContador]= useState(initial);
@@ -14,7 +14,6 @@ const ItemCount =({initial, stock, onAdd}) =>{
     };
     const agregarCarrito = () =>{
         setContador(contador);
-        alert("Se agrego" +" "+ contador + " "+ "al carrito");
         onAdd(contador)
     };
     return(

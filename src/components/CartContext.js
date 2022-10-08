@@ -42,7 +42,7 @@ const CartContextProvider = ({children}) =>{
            
         )
         setCartList([]);
-        alert('tu orden esta creada: ' + newOrder.id)
+        alert('tu orden esta creada: ' + newOrder.id + "Gracias por la compra")
     }
     const removeItem = (id) =>{
         setCartList(cartList.filter(item => item.id !== id)) 
